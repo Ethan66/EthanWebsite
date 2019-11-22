@@ -1,0 +1,101 @@
+@import 'reset';
+@import 'base';
+
+@media @min980{
+  body{
+    min-width: 980px;
+  }
+}
+.home-header{
+  &.show{
+    top: 0;
+  }
+  &.transparent{
+    background: transparent;
+  }
+  .wh(100%, 84px);
+  background: rgba(255, 255, 255, .5);
+  .fixed(-84px, 0);
+  z-index: 1000;
+  transition: top 250ms;
+  >nav{
+    .wh(100%, 100%);
+    .flex(row, space-between, center);
+    >h3{
+      img{
+        height: 22px;
+      }
+    }
+    >ul{
+      display: flex;
+      height: 22px;
+      line-height: 22px;
+      color: #fff;
+      li{
+        margin-left: 48px;
+      }
+      a{
+        padding: 0 5px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+.home-banner{
+  position: relative;
+  z-index: 100;
+  video{
+    .wh(100%, 100vh);
+    // 跟background-size差不多，不过它可以填充插入的图片
+    object-fit: fill;
+  }
+  .content{
+    .absolute(50%, 50%);
+    opacity: .8;
+    img{
+      display: block;
+      width: 14vw;
+    }
+    img:first-child{
+      margin-bottom: 1.6vw;
+    }
+    .txt{
+      margin-top: .6vw;
+      font-size: 1.7vw;
+      color: #fff;
+    }
+  }
+}
+.home-second{
+  &.fixed{
+    .fixed(0, 0);
+  }
+  width: 100%;
+  text-align: center;
+  .title{
+    img{
+      width: 200px;
+      margin: 160px auto 20px;
+    }
+    .txt{
+      margin-bottom: 20px;
+      font-size: 56px;
+      font-weight: bold;
+    }
+    .subtitle{
+      font-size: 24px;
+      opacity: .7;
+    }
+  }
+  ul{
+    .flex(row, space-around, center);
+    padding-top: 200px;
+    img{
+      width: 280px;
+    }
+    li:nth-child(2){
+      margin-top: -180px;
+    }
+  }
+}

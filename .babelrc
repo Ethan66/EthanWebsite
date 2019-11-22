@@ -1,0 +1,19 @@
+{
+  "presets": [["@babel/preset-env", {
+    "targets": {
+      "edge": "17", // IE兼容17
+      "firefox": "60", // 兼容火狐60
+      "chrome": "67", // 兼容谷歌67
+      "safari": "11.1"
+    },
+    "corejs": "3",
+    "useBuiltIns": "usage"
+  }]],
+  "plugins": [["@babel/plugin-transform-runtime", {
+    "absoluteRuntime": false,
+    "corejs": 2,
+    "helpers": true,
+    "regenerator": true,
+    "useESModules": false
+  }]]
+}
