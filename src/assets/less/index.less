@@ -1,25 +1,49 @@
 @import 'reset';
 @import 'base';
+@import 'animation';
 
-@media @min980{
-  body{
-    min-width: 980px;
+@media screen{
+  @media @max980{
+    body{
+      min-width: 980px !important;
+    }
+  }
+  @media @min1600{
+    .home-second{
+      ul{
+        max-width: 1500px !important;
+      }
+    }
   }
 }
+
 .home-header{
   &.show{
     top: 0;
   }
+  &.fixed{
+    position: fixed;
+  }
   &.transparent{
     background: transparent;
+    & > nav > ul{
+      color: #fff;
+    }
+  }
+  &.white{
+    background: rgba(255,255,255,.9);
+    & > nav > ul{
+      color: #333;
+    }
   }
   .wh(100%, 84px);
-  background: rgba(255, 255, 255, .5);
-  .fixed(-84px, 0);
+  .absolute(-84px, 0);
+  background: rgba(45,45,45,.9);
   z-index: 1000;
   transition: top 250ms;
   >nav{
     .wh(100%, 100%);
+    padding: 0 30px;
     .flex(row, space-between, center);
     >h3{
       img{
@@ -30,7 +54,7 @@
       display: flex;
       height: 22px;
       line-height: 22px;
-      color: #fff;
+      color: #949494;
       li{
         margin-left: 48px;
       }
@@ -70,10 +94,14 @@
 .home-second{
   &.fixed{
     .fixed(0, 0);
+    & + .home-iconImg{
+      margin-top: 100vh;
+    }
   }
   width: 100%;
   text-align: center;
   .title{
+    overflow: hidden;
     img{
       width: 200px;
       margin: 160px auto 20px;
@@ -89,13 +117,69 @@
     }
   }
   ul{
+    max-width: 1400px;
+    min-width: 1300px;
+    margin: 0 auto;
     .flex(row, space-around, center);
     padding-top: 200px;
+    overflow: hidden;
+    padding-bottom: 150px;
     img{
-      width: 280px;
+      width: 286px;
     }
-    li:nth-child(2){
+    li:nth-child(even){
       margin-top: -180px;
+    }
+    li{
+      position: relative;
+      &:after{
+        position: absolute;
+        left: -50px;
+        top: -50px;
+        z-index: -100;
+        width: 400px;
+        height: 750px;
+        content: '';
+        opacity: .8;
+        background: url('../img/home/phone-bg.png') center/503px 837px;
+      }
+    }
+  }
+}
+
+.home-iconImg{
+  padding: 150px 0;
+  overflow: hidden;
+  width: 100%;
+  min-height: 200px;
+  background: black;
+  .title{
+    padding-bottom: 150px;
+    text-align: center;
+    .txt{
+      padding-bottom: 20px;
+      font-size: 54px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .subtitle{
+      font-size: 25px;
+      color: #ddd;
+    }
+  }
+  ul{
+    width: 100%;
+    overflow: hidden;
+    li{
+      &:nth-child(even){
+        float: right;
+      }
+      float: left;
+      white-space: nowrap;
+      img{
+        margin: 10px 0 0 16px;
+        height: 280px;
+      }
     }
   }
 }

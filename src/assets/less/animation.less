@@ -1,0 +1,49 @@
+.txt+.subtitle{
+  animation-delay: .2s;
+}
+
+.textUp {
+  visibility: hidden;
+  animation: textUp 1.2s;
+  animation-fill-mode : forwards;
+}
+
+.home-iconImg{
+  ul{
+    li:nth-child(odd){
+      animation: imgLeft 80s linear infinite;
+    }
+    li:nth-child(even){
+      animation: imgRight 80s linear infinite;
+    }
+  }
+}
+
+@keyframes textUp {
+  from {
+    visibility: hidden;
+		transform: translate3d(0, 80px, 0);
+	}
+	to {
+    visibility: visible;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes imgLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes imgRight {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(50%, 0, 0);
+  }
+}
