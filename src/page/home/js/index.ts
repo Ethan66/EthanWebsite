@@ -97,11 +97,11 @@ class ListenScrollArrivalDomBg extends WindowScroll {
   secondDomHasFixed: boolean
   constructor () {
     super()
-    this.calculateDomBgWhiteRange(['.home-second', '.home-four'], this.beforeTop)
+    this.calculateDomBgWhiteRange(['.home-second', '.home-more'], this.beforeTop)
     this.setNavBg(this.beforeTop)
     window.addEventListener('scroll', () => {
       const afterTop: number = window.scrollY
-      this.calculateDomBgWhiteRange(['.home-second', '.home-four'], this.beforeTop)
+      this.calculateDomBgWhiteRange(['.home-second', '.home-more'], this.beforeTop)
       if (afterTop < this.beforeTop) {
         this.setNavBg(afterTop)
       }

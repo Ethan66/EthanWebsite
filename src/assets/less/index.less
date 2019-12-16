@@ -17,6 +17,9 @@
   }
 }
 
+body{
+  overflow-x: hidden;
+}
 .home-header{
   &.show{
     top: 0;
@@ -92,6 +95,7 @@
   }
 }
 .home-second{
+  background: #fff;
   &.fixed{
     .fixed(0, 0);
     & + .home-iconImg{
@@ -122,7 +126,6 @@
     margin: 0 auto;
     .flex(row, space-around, center);
     padding-top: 200px;
-    overflow: hidden;
     padding-bottom: 150px;
     img{
       width: 286px;
@@ -137,8 +140,8 @@
         left: -50px;
         top: -50px;
         z-index: -100;
-        width: 400px;
-        height: 750px;
+        width: 450px;
+        height: 800px;
         content: '';
         opacity: .8;
         background: url('../img/home/phone-bg.png') center/503px 837px;
@@ -181,5 +184,83 @@
         height: 280px;
       }
     }
+  }
+}
+
+.home-more{
+  background: #fff;
+  margin-bottom: 365px;
+  border-top: 1px solid transparent;
+  .title{
+    margin: 80px auto 150px;
+    font-size: 56px;
+    text-align: center;
+    .txt{
+      font-weight: bold;
+    }
+  }
+  ul{
+    width: 1300px;
+    margin: 0 auto;
+    li{
+      .flex(row, space-between, center);
+      .wrap{
+        margin-bottom: 50px;
+        h4{
+          margin-top: 20px;
+          margin-bottom: 6px;
+          font-size: 26px;
+          font-weight: bold;
+        }
+        p{
+          opacity: .5;
+          width: 240px;
+          font-size: 22px;
+        }
+      }
+      img{
+        .wh(240px, 240px);
+        transition: all .5s ease-in-out;
+        &:hover{
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+.home-footer{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: -1;
+  background: #292929;
+  color: #fff;
+  ul{
+    margin: 0 auto;
+    padding: 50px 0 100px;
+    width: 1000px;
+    .flex(row, space-between, top);
+    li{
+      width: 300px;
+      dt{
+        font-size: 18px;
+        line-height: 40px;
+        font-weight: bold;
+      }
+      dd{
+        font-size: 14px;
+        line-height: 25px;
+        a{
+          color: #bbb;
+        }
+      }
+    }
+  }
+  .bottom{
+    width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    color: #bbb;
+    font-size: 14px;
   }
 }
