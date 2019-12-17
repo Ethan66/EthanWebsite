@@ -4,7 +4,8 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    main: './src/main.js'
+    home: './src/main.js',
+    index2: './src/page/index2/js/index.js'
   },
   resolve: {
     extensions: ['.js', '.ts'],
@@ -61,7 +62,13 @@ module.exports = {
     }]
   },
   plugins: [new HtmlWebpackPlugin({
-    template: './src/page/home/index.html'
+    template: './src/page/home/index.html',
+    filename: 'home.html',
+    chunks: ['home']
+  }), new HtmlWebpackPlugin({
+    template: './src/page/index2/index.html',
+    filename: 'index2.html',
+    chunks: ['index2']
   }), new CleanWebpackPlugin()],
   output: {
     filename: '[name]_[hash].js',
